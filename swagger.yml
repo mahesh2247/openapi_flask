@@ -51,7 +51,6 @@ paths:
         content:
           application/json:
             schema:
-              # x-body-name: "person"
               $ref: "#/components/schemas/Person"
       responses:
         "201":
@@ -83,7 +82,6 @@ paths:
         content:
           application/json:
             schema:
-              # x-body-name: "person"
               $ref: "#/components/schemas/Person"
     delete:
       tags:
@@ -97,3 +95,6 @@ paths:
           description: "Successfully deleted person"
 
 
+# to access swagger doc : http://localhost:8000/api/ui/#/People/
+
+# http://localhost:8000/api/openapi.json
