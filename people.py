@@ -115,7 +115,10 @@ def read_one(lname):
     try:
         people = People.query.filter_by(lname=lname).first()
         people_schema = PeopleSchema()
-        return people_schema.jsonify(people)
+        if people is None:
+            return {'error': 'lname does not exist!'}
+        else:
+            return people_schema.jsonify(people)
     except Exception as e:
         print(e)
 
